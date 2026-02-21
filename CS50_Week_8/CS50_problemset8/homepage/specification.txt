@@ -1,0 +1,76 @@
+HTML Tags Used to Create This Site:
+
+1. section
+
+
+2. div
+
+
+3. a
+
+
+4. img
+
+
+5. header
+
+
+6. footer
+
+
+7. main
+
+
+8. button
+
+
+9. video
+
+
+10. p
+
+
+----------------------------------------
+CSS Styles Used to Create This Site:
+
+Selectors:
+1. iframe (tag)
+
+
+2. #career-content (id)
+
+
+3. .blank-canvas (class)
+
+
+4. a:hover (tag/pseudo class)
+
+
+5. a.customlink2 (tag/class)
+
+|------------------|
+Properties:
+
+1. height: auto;
+
+
+2. width: 100%;
+
+
+3. display: flex;
+
+
+4. margin: 20px;
+
+
+5. position: absolute;
+
+
+-----------------------------------------
+How and When Did I Use Bootstrap/JavaScript:
+
+Bootstrap: index.html line 82. I used bootstrap to create a modal which ask the user if they want to fight the robot.
+
+JavaScript: Used in index.html on line 104 to make the robot v astronaught game appear if the user clicks "Yes" to fight the robot.
+
+

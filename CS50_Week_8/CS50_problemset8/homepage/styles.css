@@ -1,0 +1,156 @@
+/* Style Sheet for Homepage Website */
+
+header {
+    text-align: center;
+    background-color: green;
+    color: lightsalmon;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+footer {
+    background-color: green;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+nav {
+    margin-right: 27px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 10px;
+    list-style-type: none;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: black;
+}
+
+a.customlink2 {
+    display: inline-block;
+    color: white;
+    padding: 10px 20px;
+    background-color: green;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+a.customlink2:hover {
+    color: black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+video {
+    height: auto;
+    width: 100%;
+}
+
+.hobby-content-videos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 80px;
+}
+
+.content-vid {
+    flex: 0 0 40%;
+}
+
+.special-margin {
+    margin: 20px;
+}
+
+.blank-canvas {
+    height: 300px;
+}
+
+.robot-modal-button {
+    display: block;
+    margin: auto;
+    margin-top: 70px;
+}
+
+#robot-game {
+    display: none;
+}
+
+#retro-robot {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#robot-chat-bubble {
+    display: none;
+    position: absolute;
+    top: -50px;
+    left: 40px;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 25px;
+
+}
+
+#robot-chat-bubble::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: black;
+    bottom: -20px;
+    left: 20px;
+}
+
+#robot-m1 {
+    display: none;
+}
+
+#robot-m2 {
+    display: none;
+}
+
+#robot-m3 {
+    display: none;
+}
+
+#mobile-use-case {
+    display: none;
+}
+
+#career-content {
+    text-align: center;
+}
+
+iframe {
+    display: block;
+    margin: auto;
+}
+
+@media screen and (max-Width: 1280px) {
+    #hidden-button {
+        display: none;
+    }
+}
+#hidden-button {
+    opacity: 0;
+}
+
+
