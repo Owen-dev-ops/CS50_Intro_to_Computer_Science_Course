@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // Load DOM so script works
+            document.addEventListener('DOMContentLoaded', function(){
+                // Tells user whether DOM has been loaded correctly.
+                console.log("DOM fully loaded and parsed");
+                // Hide correction choice message.
+                document.getElementById("correct-answer").style.visibility = "hidden";
+                document.getElementById("wrong-answer").style.visibility = "hidden";
+                document.getElementById("correct-answer-two").style.visibility = "hidden";
+                document.getElementById("wrong-answer-two").style.visibility = "hidden";
+                // flag to see if button has been clicked or not.
+                let flag = null;
+                // Listen for when correct button is clicked
+                document.querySelector(".correct").addEventListener("click", function(){
+                    if (flag == true)
+                    {
+                        return;
+                    }
+                    this.style.backgroundColor = "green";
+                    document.getElementById("correct-answer").style.visibility = "visible";
+                    flag = true;
+                });
+
+                // Listen for when incorrect button is clicked
+                document.querySelectorAll(".incorrect").forEach(function(button) {
+                    button.addEventListener("click", function() {
+                        if (flag == true)
+                        {
+                            return;
+                        }
+                        this.style.backgroundColor = "red";
+                        document.getElementById("wrong-answer").style.visibility = "visible";
+                        flag = true;
+                    });
+                });
+                // Open response logic.
+                let flagtwo = null;
+                document.querySelector("#open-response").addEventListener("click", function(event){
+                    event.preventDefault();
+                    if (flagtwo == true)
+                    {
+                        return;
+                    }
+                    else if (document.getElementById("free-response").value == "Paris")
+                    {
+                        document.getElementById("correct-answer-two").style.visibility = "visible";
+                        document.getElementById("free-response").style.backgroundColor = "green";
+                        flagtwo = true;
+                    }
+                    else
+                    {
+                        document.getElementById("wrong-answer-two").style.visibility = "visible";
+                        document.getElementById("free-response").style.backgroundColor = "red";
+                        flagtwo = true;
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2 class="center-style">Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3 class="center-style">What is the chemical symbol for water?</h3>
+                <div class="center-style">
+                    <button style="margin: 10px;" class="correct">H2O</button>
+                    <button style="margin: 10px;" class="incorrect">H2O2</button>
+                    <button style="margin: 10px;" class="incorrect">H2</button>
+                    <button style="margin: 10px;" class="incorrect">HO</button>
+                </div>
+                <div>
+                    <p id="correct-answer" class="center-style">Correct!</p>
+                    <p id="wrong-answer" class="center-style">Incorrect</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="center-style">Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3 class="center-style">What is the capital city of France?</h3>
+                <div class="center-style">
+                    <form>
+                        <input type="text" id="free-response" placeholder="Answer" style="width: 150px; height: 25px;">
+                        <button type="submit" id="open-response" style="display: block; margin-left: auto; margin-right: auto; margin-top: 10px;">Submit</button>
+                        <p class="center-style" id="correct-answer-two">Correct!</p>
+                        <p class="center-style" id="wrong-answer-two">Incorrect</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
