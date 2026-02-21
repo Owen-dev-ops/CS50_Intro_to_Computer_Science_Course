@@ -1,0 +1,23 @@
+sort1 uses: Bubble Sort
+
+How do you know?:
+
+- I know because in the best case scenario for bubble sort, the array is already perfectly sorted. I tested sort 1 on each txt file of size 5000
+and noticed it worked the quickest on the sorted list, and slowest on the random list and reversed list. I ran it multiple times and this result was
+consistent.
+
+sort2 uses: Merge Sort
+
+How do you know?:
+
+- Sort2 is very efficient regardless of the size of the list. And, it takes the same amount of time to sort each list regardless of its initial order.
+Merge sort handles large arrays effectively which sort2 has proven it does. Merge sort also consistently runs in O(n log n) time complexity even for
+the worst case, and sort2 takes the same amount of time to sort each list regardless of initial order.
+
+sort3 uses: Selection Sort
+
+How do you know?:
+
+- One, by process of elimination, and two because selection sort always has O(n^2) time complexity regardless of the initial order of an array and
+sort3 takes the same time to run regardless of which list of txt we use it on. (Same time for each list of the same correlating size of course.)
+Selection sort faulters when arrays become larger as well and sort3 takes the longest on the 50000 element txt files. Longer than both sort1 and sort2.
