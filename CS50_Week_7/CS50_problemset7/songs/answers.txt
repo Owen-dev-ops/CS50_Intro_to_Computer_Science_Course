@@ -1,0 +1,4 @@
+I would characterize their audio aura as high energy and generally good for dancing.
+This may not be representative of the listener as I am making my basis from looking over the table and describing generally what I see. I am not taking into account every single data point.
+A much better way would be to use sqlite3 commands to average the energy, valence, and daceability and then average those results. This number could then be uniquely associated with
+an aura type. 
