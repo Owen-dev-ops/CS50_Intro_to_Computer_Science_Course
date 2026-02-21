@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+
+    <!-- Users Stock Portfolio -->
+    <table>
+        <tr>
+            <th colspan="5">Your Portfolio</th>
+        </tr>
+        <tr>
+            <th>Company</th>
+            <th>Symbol</th>
+            <th>Number of Shares</th>
+            <th>Price Per Share</th>
+            <th>Total Holdings</th>
+        </tr>
+        {% set total_stock_value = namespace(value=0) %}
+        {% for row in user_portfolio %}
+            {% set total_stock_value.value = total_stock_value.value + row.total_price %}
+            <tr>
+                <td>{{ row.company }}</td>
+                <td>{{ row.symbol }}</td>
+                <td>{{ row.total_shares }}</td>
+                <td>{{ (row.total_price / (row.total_shares | int)) | usd }}</td>
+                <td>{{ row.total_price | usd }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br><br>
+
+    <!-- Users Account Summary -->
+    <table>
+        <tr>
+            <th colspan="3">Account Summary</th>
+        </tr>
+        <tr>
+            <th>Total Stock Value</th>
+            <th>Total Cash</th>
+            <th>Total Account Value</th>
+        </tr>
+        <tr>
+            <td>{{ total_stock_value.value | usd }}</td>
+            <td>{{ user_cash | usd }}</td>
+            <td>{{ (total_stock_value.value + (user_cash | float)) | usd }}</td>
+        </tr>
+    </table>
+
+{% endblock %}

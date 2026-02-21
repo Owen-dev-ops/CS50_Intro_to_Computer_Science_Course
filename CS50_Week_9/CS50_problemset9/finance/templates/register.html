@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <form id="registration_form" action="/register" method="post">
+        <input type="text" name="username" autofocus autocomplete="off" required placeholder="Username">
+        <br>
+        <input type="text" name="password" autocomplete="off" required placeholder="Password">
+        <br>
+        <input type="text" name="confirmation" autocomplete="off" required placeholder="Confirm Password">
+        <br>
+        <button type="submit">Register</button>
+    </form>
+
+{% endblock %}
+{% block scripts %}
+
+    <script>
+        document.getElementById("registration_form").addEventListener("submit", () => {
+            alert("Sucess! You've been registered.");
+        });
+    </script>
+
+{% endblock %}

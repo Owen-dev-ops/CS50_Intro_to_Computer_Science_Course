@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %} Quoted {% endblock %}
+
+
+{% block main %}
+
+    <h3>{{ company_name }}'s current price is {{ stock_price | usd }}.</h3>
+    <button id="quote_again" type="button">Get another quote?</button>
+
+{% endblock %}
+{% block scripts %}
+    <script>
+        document.getElementById("quote_again").addEventListener("click", () => {
+            window.location.href = "/quote";
+        });
+    </script>
+{% endblock %}

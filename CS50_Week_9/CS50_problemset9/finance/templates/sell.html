@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %} Sell {% endblock %}
+
+
+{% block main %}
+
+    <form action="/sell" method="post">
+        <select name="symbol" required>
+            <!-- Use place holders. For every unique symbol in the users purchase table add the option -->
+            {% for option in options %}
+                <option>{{ option.symbol }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" required autocomplete="off" name="shares" placeholder="# of shares">
+        <button type="submit">Sell</button>
+    </form>
+
+{% endblock %}
